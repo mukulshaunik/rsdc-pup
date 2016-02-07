@@ -1,0 +1,216 @@
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+		{% load staticfiles %}
+       <head>
+        <link rel="stylesheet" href="{% static 'bootstrap-3.3.5-dist/css/bootstrap.min.css' %}">
+		<script src="{% static 'bootstrap-3.3.5-dist/js/jquery.min.js' %}"></script>
+		<script src="{% static 'bootstrap-3.3.5-dist/js/bootstrap.min.js' %}"></script>
+        </head>
+        <body>
+		<div id="T"><br>
+		Research and Skill Development Cell
+	<!--	{% if user.is_authenticated %}
+		<a id="logout" href="{% url "Logout" %}">Logout</a>
+		{% endif %}-->
+		<br><br></div>
+         <nav class="navbar navbar-default ">
+  <div class="container-fluid">
+      <ul class="nav nav-tabs nav-justified" style="color:black;">
+            <li class="HF"><a style="color:black;" href="{% url "Home" %}"  class="Menu">Home</a></li>
+		<li class="H"><a style="color:black;" href="{% url "About" %}"  class="Menu">About RSDC</a></li>
+		
+        <li class="dropdown">
+          <a style="color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Grant
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="H"><a href="{% url "ResearchList" %}" class="sub"  >Research Grants</a></li>
+		<li class="H"><a href="{% url "TravelList" %}" class="sub"  >Travel Grants</a></li>
+		<li class="H"><a href="{% url "ConferenceList" %}" class="sub"  >Conference Grants</a></li>
+		</ul>
+        </li>
+        <li class="H"><a style="color:black;" href="{% url "FellowshipList" %}" class="Menu"  >Fellowships</a></li>
+		<li class="H"><a style="color:black;" href="{% url "ScholarshipList" %}" class="Menu"  >Scholarships</a></li>
+		<li class="H"><a style="color:black;" href="{% url "Member" %}" class="Menu"  >Member</a></li>
+        {% if user.is_authenticated %}         
+        <li><a href="{% url "Logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>		
+             {% endif %}        
+            </ul>           
+    </div>
+</nav>
+	<!--	<div id="M">
+		<ul>
+		<li class="HF"><a href="{% url "Home" %}"  class="Menu">Home</a></li>
+		<li class="H"><a href="{% url "About" %}"  class="Menu">About RSDC</a></li>
+		<li class="H"><a href="" class="Menu">Grants</a>
+		<ul>
+		<li class="H"><a href="{% url "ResearchList" %}" class="sub"  >Research Grants</a></li>
+		<li class="H"><a href="{% url "TravelList" %}" class="sub"  >Travel Grants</a></li>
+		<li class="H"><a href="{% url "ConferenceList" %}" class="sub"  >Conference Grants</a></li>
+		</ul></li>
+		<li class="H"><a href="{% url "FellowshipList" %}" class="Menu"  >Fellowships</a></li>
+		<li class="H"><a href="{% url "ScholarshipList" %}" class="Menu"  >Scholarships</a></li>
+		<li class="H"><a href="{% url "Member" %}" class="Menu"  >Member</a></li>
+		</ul>
+		</div>
+		<div >-->
+        <div style="text-align:center;">
+		<ul class="list-group">
+		<li class="list-group-item">Message from {{VC.Post}} - {{VC.text}}</li>
+		<li class="list-group-item">Message from {{Dean.Post}} - {{Dean.text}}</li>
+		<li class="list-group-item">Message from {{HOD.Post}} - {{HOD.text}}</li>
+		</div>
+		
+		<div class="col-sm-9">
+		<span ><h2>About Punjabi University</h2><img id="pic" src="{% static "user/images/Pic.jpg" %}" width="550px;" align="right" height="350px;"/></span>		
+		<p>Punjabi University is a higher education institute located in Patiala, Punjab, India. Punjabi University teaches and researches in science , engineering and technology, humanities , social sciences, performing arts and sports.It was established on the 30 April 1962, and is only the second university in the world to be named after a language, after Hebrew University of Israel. Originally it was conceived as a unitary multi-faculty teaching and research university, primarily meant for the development and enrichment of Punjabi language and culture, but alive to the social and education requirements of the state.The university has undertaken the responsibility of maintaining the estate of Norah Richards at Andretta, Himachal Pradesh. Arrangements have been made for faculty members and students who wish to carry out study and research in the fields of theatre and television.There is a rich library with rare books and manuscripts bequeathed by Bhai Vir Singh, Balbir Singh and Prof Puran Singh, the doyens of Punjabi literature. Research on comparative religions is carried out at this center.</p>
+		</div>
+            <div class="col-sm-3" style="height:630px;">
+            
+            <div class="well"  style="height:400px; background-color:#ECECEA; border-radius:">
+		<h2>Notice Board</h2>
+
+		<hr>
+
+		<marquee  direction="up" onmouseover="this.stop();" onmouseout="this.start();" scrollamount="3">
+
+		<ul>
+
+		{% for notice in notices %}
+
+			<li>{{notice.message}}<br> by {{notice.auth.username}}</li>
+
+		{% endfor %}
+        </ul>
+            </marquee>
+                </div>
+			</div>
+  <!--      <div id="Mission">
+		<h2>Mission:</h2>
+		<p>Something Something Something Something Something Something Something Something </p>
+		</div>
+		<div id="Vision">
+		<h2>Vision:</h2>
+		<p>Something Something Something Something Something Something Something Something </p>
+		</div>
+	-->	
+		{% if user.is_authenticated %}
+        <div class="col-sm-1">  </div>     
+		<div class="col-sm-10" class="well">		
+        <div class="col-sm-2"><a href="{% url "ResearchCircle" %}"><img class="u" src="{% static "user/images/RC.jpg" %}" width="250px;" height="250px;"/></a></div><div class="col-sm-2">  </div>
+		<div class="col-sm-2"><a href="{% url "ProjectCircle" %}"><img class="u" src="{% static "user/images/PC.jpg" %}" width="250px;" height="250px;"/></a></div><div class="col-sm-2">  </div>
+		<div class="col-sm-2"><a href="{% url "InternCircle" %}"><img class="u" src="{% static "user/images/IC.jpg" %}" width="250px;" height="250px;"/></a></div></div>
+		{% endif %}
+            	
+		{% if user.is_anonymous %}
+             <div class="col-sm-1">  </div>   
+            <div class="col-sm-10" class="well">
+		<div class="col-sm-2"><a href="{% url "ResearchCircleGuest" %}"><img class="u" src="{% static "user/images/RC.jpg" %}" width="250px;" height="250px;"/></a></div><div class="col-sm-2">  </div>
+		<div class="col-sm-2"><a href="{% url "ProjectCircleGuest" %}"><img class="u" src="{% static "user/images/PC.jpg" %}" width="250px;" height="250px;"/></a></div><div class="col-sm-2">  </div>
+		<div class="col-sm-2"><a href="{% url "InternCircleGuest" %}"><img class="u" src="{% static "user/images/IC.jpg" %}" width="250px;" height="250px;"/></a></div>
+		{% endif %}
+		</div>
+		<br>
+		</body>	
+<style type="text/css">
+#Board{
+float:right;
+width:340px;
+height:450px;
+background-color:#51b8d5;
+}
+#Board h2{
+color:white;
+text-align:center;
+font-family:Palatino, serif;
+}
+#Board hr{
+width:200px;
+}
+#Board ul li{
+line-height:30px;
+color:white;
+font-size:16px;
+}
+#info{
+width:1000px;
+}
+#info p{
+font-size:14px;
+}
+#expand{
+cursor:hand;
+float:right;
+}
+#VC{
+background-color:#54caf1;
+}
+#Head{
+background-color:#7ccfea;
+}
+#IN{
+background-color:#b2ddeb;
+}
+#logout{
+margin:0px 0px 0px 1240px;
+	color:white;
+	text-decoration:none;
+	font-size:20px;
+	}
+#logout:hover{
+	text-decoration:underline;
+	}
+#pic{
+border-radius:50%;
+margin: 70px 0px 0px 0px;
+}
+#Mission{
+font-size:25px;
+color:#28748b;
+text-align:center;
+font-family:Parkavenue, cursive;
+}
+#Vision{
+font-size:25px;
+color:#28748b;
+text-align:center;
+font-family:Parkavenue, cursive;
+}
+#abt{
+font-size:30px;
+color:#1783b5;
+}
+#x{
+font-size:15px;
+background-color:d6e8ee;
+}
+.u{
+border-radius:50%;
+}
+#comb{
+#background-color:#a4b4ae;
+}
+#Circle{
+text-align:center;
+}
+
+h1{
+color:white;
+}
+p{
+font-size:17px;
+color:#053847;
+}
+
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+#color:white;
+min-width:1330px;
+background-color:#74AFAD;
+}
+
+
+</style>
+</html>	

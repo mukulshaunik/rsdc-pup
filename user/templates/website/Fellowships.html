@@ -1,0 +1,64 @@
+{%	extends	"website/base.html"	%}
+{% block title %}Fellowship{% endblock title %}
+		{% block content %}
+		<br>
+	<div >
+	<ul class="list-group">
+	{% for grant1 in grants %}
+	<li class="list-group-item"><a href="{%	url	"Fellowship"  title=grant1.title	%}" class="RG">{{grant1.title}}</a></li>
+	{% endfor %}
+</div>
+	</body>
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+#List{
+line-height:40px;
+min-width:600px;
+overflow:auto auto;
+}
+#List a{
+
+padding:5px;
+text-decoration:none;
+}
+#List a:hover{
+text-decoration:underline;
+}
+
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#034054;
+}
+
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+#font-size:20px;
+background-color:#b0c8de;
+}
+.RG{
+color:black;
+font-weight:bold;
+}
+.RG:hover{
+text-decoration:underline;
+}
+</style>
+{% endblock %}

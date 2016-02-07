@@ -1,0 +1,61 @@
+<html>
+	<body>
+		{% load staticfiles %}
+        <head>
+        <link rel="stylesheet" href="{% static 'bootstrap-3.3.5-dist/css/bootstrap.min.css' %}">
+		<script src="{% static 'bootstrap-3.3.5-dist/js/jquery.min.js' %}"></script>
+		<script src="{% static 'bootstrap-3.3.5-dist/js/bootstrap.min.js' %}"></script>
+        </head>
+		<div id="T" style="background-color:#558C89"><br>
+		{% block title %}{% endblock %}
+		<!--{% if user.is_authenticated %}
+		<a id="logout" href="{% url "Logout" %}">Logout</a>
+		{% endif %}-->
+            <br>
+		<br></div>
+    <nav class="navbar navbar-default ">
+  <div class="container-fluid">
+      <ul class="nav nav-tabs nav-justified" style="color:black;">
+            <li class="HF"><a style="color:black;" href="{% url "Home" %}"  class="Menu">Home</a></li>
+		<li class="H"><a style="color:black;" href="{% url "About" %}"  class="Menu">About RSDC</a></li>
+		
+        <li class="dropdown">
+          <a style="color:black;" class="dropdown-toggle" data-toggle="dropdown" href="#">Grant
+          <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li class="H"><a href="{% url "ResearchList" %}" class="sub"  >Research Grants</a></li>
+		<li class="H"><a href="{% url "TravelList" %}" class="sub"  >Travel Grants</a></li>
+		<li class="H"><a href="{% url "ConferenceList" %}" class="sub"  >Conference Grants</a></li>
+		</ul>
+        </li>
+        <li class="H"><a style="color:black;" href="{% url "FellowshipList" %}" class="Menu"  >Fellowships</a></li>
+		<li class="H"><a style="color:black;" href="{% url "ScholarshipList" %}" class="Menu"  >Scholarships</a></li>
+		<li class="H"><a style="color:black;" href="{% url "Member" %}" class="Menu"  >Member</a></li>
+          {% if user.is_authenticated %}         
+        <li><a href="{% url "Logout" %}"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>		
+             {% endif %}        
+		</ul>
+    </div>
+</nav>
+	<!--	<div id="M">
+		<ul>
+		<li class="HF"><a href="{% url "Home" %}"  class="Menu">Home</a></li>
+		<li class="H"><a href="{% url "About" %}"  class="Menu">About RSDC</a></li>
+		<li class="H"><a href="" class="Menu">Grants</a>
+		<ul>
+		<li class="H"><a href="{% url "ResearchList" %}" class="sub"  >Research Grants</a></li>
+		<li class="H"><a href="{% url "TravelList" %}" class="sub"  >Travel Grants</a></li>
+		<li class="H"><a href="{% url "ConferenceList" %}" class="sub"  >Conference Grants</a></li>
+		</ul></li>
+		<li class="H"><a href="{% url "FellowshipList" %}" class="Menu"  >Fellowships</a></li>
+		<li class="H"><a href="{% url "ScholarshipList" %}" class="Menu"  >Scholarships</a></li>
+		<li class="H"><a href="{% url "Member" %}" class="Menu"  >Member</a></li>
+		</ul>
+		</div>
+		</div>  -->
+		{% block content %}{% endblock %}
+		
+		
+		
+
+</html>	

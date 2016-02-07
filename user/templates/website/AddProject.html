@@ -1,0 +1,147 @@
+<html>
+
+            <head>
+<title>Add Project</title>
+{% load staticfiles %}
+         
+        <link rel="stylesheet" href="{% static 'bootstrap-3.3.5-dist/css/bootstrap.min.css' %}">
+		<script src="{% static 'bootstrap-3.3.5-dist/js/jquery.min.js' %}"></script>
+		<script src="{% static 'bootstrap-3.3.5-dist/js/bootstrap.min.js' %}"></script>
+        
+  </head>
+	<body>
+	         <div id="T">
+			 <a align="right" href="{% url "Member" %}">Back to Workspace</a>
+			 <br>
+		Details Form
+		<br>
+		<a href="{% url "Logout" %}">Logout</a>
+		<br>
+		</div>
+		<div id="M">
+		<br><br>
+		<h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{message}}</h2>
+		</div>
+            <div class="col-sm-3"></div>
+		<div class="col-sm-5">
+		<form role="form" action="{% url "SaveProject" %}" method="post">{% csrf_token %}
+                      <div class="form-group">
+                    <label for="start_date">Start Date:</label>
+                    <input type="text" class="form-control" id= "start_date" name="start_date" placeholder="dd/mm/yyyy" value="{{start.date}}" />
+                  </div>
+            <div class="form-group">
+                    <label for="topic">Topic:</label>
+                    <input type="text" class="form-control" placeholder="IN CAPS" id="topic" name="topic"  value="{{topic}}" >
+                  </div>
+                          <div class="form-group">
+                    <label for="name">Research/Project:</label>
+                    <select name="type" class="form-control"  value="{{type}}">
+							<option value="Research">Research</option>
+							<option value="Project">Project</option>
+						  </select>	
+                  </div>
+                    <div class="form-group">
+                        <label for="pr_work">Any Previous Work:</label>
+                       <textarea class="form-control" wrap="physical" placeholder="Just name the projects/researches.." rows="5" id="pr_work" name="past" ></textarea>
+                      </div>
+                      <div class="form-group">
+                        <label for="Details">Details:</label>
+                       <textarea class="form-control" wrap="physical" placeholder="A very detailed Description about your project......" rows="5" id="pr_work" name="details" ></textarea>
+                      </div>
+            <div class="form-group">
+                    <label for="intrn">No. of Interns Required:</label>
+                    <input type="text" class="form-control" id="intrn" name="no_of_interns_required" value="{{no_of_interns_required}}" >
+                  </div>
+                     <div class="form-group">
+                        <label for="rq">Address:</label>
+                       <textarea class="form-control" rows="5" id="rq" name="role_qualification" placeholder="Example : Designer - Html/css+JavaScript" >{{role_qualification}}</textarea>
+                      </div>
+
+                 <button type="Submit" style="  width: 535px;" class="btn btn-primary">Submit</button>
+	<!--	<div id="RFC">
+		<pre>
+		<p style="font-size:15px; solid black;"><b>		
+Start date              : <input name="start_date" type="text" placeholder="dd/mm/yyyy" value="{{start_date}}"/>
+
+Topic                   : <input name="topic" type="text" placeholder="IN CAPS" value="{{topic}}"/><br>
+
+Research/Project        : <select name="type" style="width:175px; height:35px;" value="{{type}}">
+							<option value="Research">Research</option>
+							<option value="Project">Project</option>
+						  </select>	
+Any Previous Work       : <textarea name="past" wrap="physical" placeholder="Just name the projects/researches.." cols="60" rows="10"></textarea><br>
+Details                 : <textarea name="details" wrap="physical" cols="60" rows="20"  placeholder="A very detailed Description about your project......">{{details}}</textarea><br>	
+
+No. of Interns Required : <input name="no_of_interns_required" type="text" value="{{no_of_interns_required}}" /><br>
+
+Role - Qualification    : <textarea name="role_qualification" wrap="physical" cols="60" rows="10"  placeholder="Example : Designer - Html/css+JavaScript" >{{role_qualification}}</textarea><br></b>
+<p>             <input type="submit" style="width: 200px; height: 50px;" value="Submit"/></p></pre>
+		<br>
+		<br></div>-->
+		</form>
+		</div>
+	</body>
+<style>
+#frm{
+width:500px;
+height:1100px;
+margin-right:auto;
+margin-left:auto;
+opacity:0.6;
+}
+
+.H{
+display:inline;
+border-left:2px solid;
+border-left-color:white;
+padding-left:1em;
+padding-right:1em;
+}
+.HF{
+display:inline;
+border-left:none;
+padding-left:0;
+padding-right:1em;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#558C89;
+}
+#M{
+font-family:Palatino, serif;
+font-size:20px;
+margin-left:415px;
+}
+#T a{
+margin-left:1200px;
+text-decoration:none;
+color:white;
+font-size:15px;
+}
+#T a:hover{
+text-decoration:underline;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+textarea{
+vertical-align:top;
+}
+input{
+line-height:30px;
+}
+p
+{
+width:500px;
+}	
+</style>
+</html>

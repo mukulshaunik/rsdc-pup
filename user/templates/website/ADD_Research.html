@@ -1,0 +1,114 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Details Form{% endblock title %}
+		{% block content %}
+		<div id="frm">
+		<form method="post">
+		<div id="RFC">
+		<pre>
+		<p style="text:2px solid black;"><b>
+Name               : <input type="text" /><br>
+DOB(dd/mm/yyyy)    : <input type="text" /><br>
+Gender             : <input type="text" /><br>
+Email-ID           : <input type="text" /><br>
+Qualification      : <input type="text" /><br>
+Phone              : <input type="text" /><br>
+Topic Of Research  : <input type="text" /><br></b>
+Details            : <textarea wrap="physical" cols="60" rows="20" ></textarea><br>	
+<p>             <input type="Button" style="width: 200px; height: 50px;" value="Submit"/></p></pre>
+		<br>
+		<br></div>
+		</form>
+		</div>
+	</body>
+<style>
+#frm{
+width:500px;
+height:1100px;
+margin-right:auto;
+margin-left:auto;
+opacity:0.6;
+}
+
+.H{
+display:inline;
+border-left:2px solid;
+border-left-color:white;
+padding-left:1em;
+padding-right:1em;
+}
+.HF{
+display:inline;
+border-left:none;
+padding-left:0;
+padding-right:1em;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#034054;
+}
+#M{
+text-align:center;
+font-family:Andale Mono, monospace;
+min-height:30px;
+background-color:#0bbaf4;
+font-size:20px;
+text-decoration:none;
+overflow:auto auto;
+min-width:1330px;
+}
+li{
+display:inline;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M ul li:hover > ul {
+  visibility: visible;
+  
+}
+#M ul li:hover {
+  position: relative;
+  z-index: 599;
+  cursor: default;
+}
+#M ul ul {
+text-align:left;
+font-size:15px;
+width:185px;
+line-height:30px;
+border-color:black;
+	margin-left:485px;
+ visibility: hidden;
+  position: absolute;
+  z-index: 598;
+  background: #3b5757;
+}
+#M ul ul a {
+text-decoration:none;
+ color:White; 
+}
+#M ul ul a:hover {
+font-size:16px;
+}
+h1{
+
+}
+textarea{
+vertical-align:top;
+}
+p
+{
+width:500px;
+}	
+</style>
+{% endblock %}

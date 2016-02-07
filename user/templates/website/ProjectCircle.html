@@ -1,0 +1,118 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Project Circle{% endblock title %}
+		{% block content %}
+ <div class="col-sm-1"></div>		
+	<div class="col-sm-6">	
+        <h1>Project Topics</h1>
+		<ol class="list-group">
+		{% for row in rows %}
+			<li class="list-group-item"><a style="font-size:20px; color:black;" href="#">{{row.0.topic}}</a></li>
+				<div class="well">
+				<span class="data">Discription</span>
+				<p>{{row.0.details|linebreaks}}</p>
+				<span class="data">Research Head</span>
+				<p>{{row.2.name}}</p>
+				<span class="data">Contact</span>
+				<p>{{row.1.email}}</p>
+				</div>
+		{% endfor %}
+		</ol>
+        </div>
+             <div class="col-sm-2"></div>	
+		<div class="col-sm-3">
+<h4>Active Projects</h4>
+	<marquee direction="up" onmouseover="this.stop();" onmouseout="this.start();" id="side"><ul id="w">
+	     <ul class="list-group">
+	<li class="list-group-item">SERB Extra Mural Research Funding (Individual Centric)</li>
+	<li class="list-group-item">Nano Mission</li>
+	<li class="list-group-item">INSPIRE Faculty Scheme</li>
+	<li class="list-group-item">Women Scientist Scheme</li>
+	<li class="list-group-item">Drugs and Pharmaceuticals Research Programme</li>
+	<li class="list-group-item">Natural Resources Data Management System</li></ul></marquee>
+	</div>
+		
+		
+		<ul class="pagination pagination-lg" style="margin:80px 0px 0px 400px;" >
+	<li><a href="#" rel="prev">Previous</a></li>
+	<li><a href="#">1</a></li>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#" rel="next">Next</a></li>
+</ul>
+		</body>
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+.sidebar{
+position:relative;
+top:100px;
+float:right;
+background-color:#63b8d0;
+line-height:30px;
+overflow-y:auto;
+min-width:250px;
+}
+.s{
+color:black;
+}
+#w{
+width:280px;
+}
+.data{
+font-size:20px;
+text-decoration:underline;
+font-weight:bold;
+}
+p{
+font-size:20px;
+width:600px;
+}
+.back{
+width:800px;
+padding-left:10px;
+background-color:#9fd1e0;
+border-right:solid;
+border-right-color:#2d7086;
+border-right-width:20px;
+overflow:auto auto;
+}
+
+#list li{
+font-size:25px;
+color:#5271b1;
+}
+#list li a{
+text-decoration:none;
+color:#5271b1;
+font-size:30px;
+line-height:50px;
+}
+#list li a:hover {
+font-size:35;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-position:center;
+background-repeat:no-repeat;
+background-image:url("{% static "user/images/PCP3.jpg" %}");
+}
+#M{
+font-size:20px;
+background-color:#b9e2ee;
+}
+</style>
+</html>
+{% endblock %}

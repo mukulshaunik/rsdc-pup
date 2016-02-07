@@ -1,0 +1,49 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}{{grant.title}}{% endblock title %}
+		{% block content %}
+		<div id="cont"><img src="{% static "user/images/" %}{{grant.title}}.jpg"  align="right" style="height:450px; width:600px;"/>
+<p >{{grant.text|linebreaks}} </p>
+<p align="left" style="font-size:25px;">For more information visit:<a href="{{grant.link}}" style="font-size:25px;"><input type="button" value="Click"/></a></p>
+</body>
+</html>
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#034054;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+font-size:20px;
+background-color:#b0c8de;
+}
+#cont li
+{
+  font-size:18px;
+}
+#cont p{
+font-size:20px;
+}
+
+</style>
+		
+{% endblock %}

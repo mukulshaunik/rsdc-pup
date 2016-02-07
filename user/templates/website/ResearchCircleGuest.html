@@ -1,0 +1,75 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Research Circle{% endblock title %}
+		{% block content %}
+		<div id="data">
+		<h1 class="col-sm-2">Welcome,Guest</h1><div class="col-sm-7"></div><a class="col-sm-3" href="{% url "ResearchCircle" %}"><input type="Button"  style="font-size:20px; color:black; width:210px; cursor:hand; height:75px; " value="Research Circle" ></a><br>
+		<h2>What would I do?</h2>
+		<h3>As a member of the Research' Circle, you would assist with a range of tasks including:</h3>
+		<ul>
+		<li>Identification of research problem</li>
+		<li>Literature review</li>
+		<li>Specifying the purpose of research</li>
+		<li>Determine specific research questions</li>
+		<li>Specification of a Conceptual framework - Usually a set of hypotheses</li>
+		<li>Choice of a methodology (for data collection)</li>
+		<li>Data collection</li>
+		<li>Analyzing and interpreting the data</li>
+		<li>Reporting and evaluating research</li>
+		<li>Communicating the research findings and, possibly, recommendations</li>
+		</ul>		
+		<h2>How to start a new Research?</h2>
+		<p>To start a new Research , firstly you have to register yourself with us and then after login you'll see a add research tab on this page from where you can add a new Research by giving some details about the Research you want to start or you have already started.</p>
+		<h2>How to be a part of someone's Research?</h2>
+		<p>To be a part of someone's Research, firstly you have to register yourself with us and then after login you can click on the Intern circle tab and select someone's Research and apply for it by giving some details like why do you want to join?, Any research experience? Etc. If the Research head accepted your request then you can be the part of that Research. </p>
+		</div>
+	</body>
+	<style type="text/css">
+#logout{
+    margin:0px 0px 0px 1240px;
+    color:white;
+    text-decoration:none;
+    font-size:20px;}
+    #logout:hover{
+    text-decoration:underline;
+}
+#data li{
+font-size:18px;
+}	
+#data{
+background-image:url({% static "user/images/Research_G.jpg" %});
+background-repeat:no-repeat;
+background-position:center;
+}
+#data p{
+font-size:20px;
+}	
+#data h1{
+color:#2e7e99;
+}	
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+height:200px;
+min-width:1330px;
+background-position:center;
+background-image:url("{% static "user/images/RCP2.jpg" %}");
+}
+#M{
+font-size:20px;
+background-color:#b9e2ee;
+margin-top:50px;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+
+</style>
+{% endblock %}

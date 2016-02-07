@@ -1,0 +1,160 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Intern Circle
+{% if user.is_anonymous %}
+		<br>
+		{% endif %}{% endblock title %}
+		{% block content %}
+		<br><br><br>
+		{{state}}
+            <div class="col-sm-1"></div>
+		<div class="col-sm-4">
+		<h1 align="center">Research Topics</h1>
+		<ol class="list-group">
+			{% for row in row2 %}
+			<li class="list-group-item"><a style="font-size:20px; color:black;" href="#">{{row.0.topic}}</a></li>
+				<div class="well">
+				<span class="data">Discription</span>
+				<p>{{row.0.details|linebreaks}}</p>
+				<span class="data">Research Head</span>
+				<p>{{row.2.name}}</p>
+				<span class="data">Contact</span>
+				<p>{{row.1.email}}</p>
+				{% if user.is_authenticated %}
+				{% if count = zero %}
+				{% if project != row.0 %}
+				<a href="{% url "Apply" pk=row.0.id  %}"><input type="button" value="Apply" style="cursor:hand;margin:0px 0px 20px 300px; height:40px; width:80px;" />
+				</a>
+				{% endif%}
+				{% endif %}
+				{% if count > zero %}
+				<a href="{% url "Apply" pk=row.0.id  %}"><input type="button" value="Apply" style="cursor:hand;margin:0px 0px 20px 300px; height:40px; width:80px;" />
+				</a>
+				{% endif %}	
+				{% endif %}				
+				</div>
+		{% endfor %}
+	
+		</ol>
+		</div>
+        <div class="col-sm-1"></div>
+		<div class="col-sm-4">
+		<h1 align="center">Project Topics</h1>
+		<ol class="list-group">
+			{% for row in row1 %}
+			<li class="list-group-item"><a href="#">{{row.0.topic}}</a></li>
+				<div class="well">
+				<span class="data">Discription</span>
+				<p>{{row.0.details|linebreaks}}</p>
+				<span class="data">Project Head</span>
+				<p>{{row.2.name}}</p>
+				<span class="data">Contact</span>
+				<p>{{row.1.email}}</p>
+				{% if user.is_authenticated %}
+				{% if count = zero %}
+				{% if project != row.0 %}
+				<a href="{% url "Apply" pk=row.0.id  %}"><input type="button" value="Apply" style="cursor:hand;margin:0px 0px 20px 300px; height:40px; width:80px;" />
+				</a>
+				{% endif%}
+				{% endif %}
+				{% if count > zero %}
+				<a href="{% url "Apply" pk=row.0.id  %}"><input type="button" value="Apply" style="cursor:hand;margin:0px 0px 20px 300px; height:40px; width:80px;" />
+				</a>
+				{% endif %}	
+				{% endif %}	
+				</div>
+		{% endfor %}
+		
+		</ol>
+	
+		</div>
+		<ul class="pagination pagination-lg" style="margin:80px 0px 0px 500px;" >
+	<li><a href="#" rel="prev">Previous</a></li>
+	<li><a href="#">1</a></li>
+	<li><a href="#">2</a></li>
+	<li><a href="#">3</a></li>
+	<li><a href="#">4</a></li>
+	<li><a href="#">5</a></li>
+	<li><a href="#" rel="next">Next</a></li>
+</ul>	
+	</body>
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+	color:white;
+	text-decoration:none;
+	font-size:20px;
+	}
+#logout:hover{
+	text-decoration:underline;
+	}
+.data{
+font-size:20px;
+text-decoration:underline;
+font-weight:bold;
+}
+p{
+font-size:20px;
+width:500px;
+}
+.back{
+width:500px;
+padding-left:10px;
+padding-top:10px;
+background-color:#b3c2f9;
+border-right:solid;
+border-right-color:#2d7086;
+border-right-width:15px;
+border-left:solid;
+border-left-color:#2d7086;
+border-left-width:15px;
+overflow:auto auto;
+}
+
+#Left{
+margin:0px 0px 0px 70px;
+float:left;
+}
+#Right{
+margin:0px 80px 0px 0px;
+float:right;
+}
+
+#list ol li{
+font-size:25px;
+}
+#list li a{
+text-decoration:none;
+color:#625f5a;
+font-size:30px;
+line-height:50px;
+}
+#list li a:hover {
+font-size:35px;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+height:200px;
+min-width:1330px;
+background-position:center;
+background-repeat:no-repeat;
+background-image:url("{% static "user/images/ICP.jpg" %}");
+}
+
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+background-color:#b9e2ee;
+font-size:20px;
+}
+</style>
+{% endblock %}

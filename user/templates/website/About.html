@@ -1,0 +1,85 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}About RSDC{% endblock title %}
+		{% block content %}
+		<br><br>
+		<div id="cont">
+		 <div class="panel panel-info" style="text-align:center;">
+      <div class="panel-heading" >Mission</div>
+      <div class="panel-body"  >
+    <ul>
+       <li>Encouragement of the young researchers towards new and emerging technologies in their respective fields.
+</li>
+<li>To motivate students to participate in the national and international seminars, conferences and various workshops.</li>
+<li>Learning initiatives via organising various seminars and workshops to create awareness regarding different patenting and intellectual property rights laws and regulation.</li> 
+
+<li>Implementation of earn while learn scheme for students by undertaking minor projects from the industry.
+</li>
+<li>Focus on soft skill development training to the students.</li>
+
+<li>Institution based skill development through student exchange programs.</li>
+
+<li>Enhancing individual’s employability and ability to adapt to changing technologies and labour market demands.</li>
+        </div>
+   
+    </div>
+	 <div class="panel panel-info" style="text-align:center;">
+      <div class="panel-heading">Vision</div>
+      <div class="panel-body" >	
+        Empowerment and enrichment of the youth with improved attitude, skills and knowledge making them readily employable and thus ensuring their competency in the global market.        
+		</div></div>
+		<div id="Cnt"><br><br>
+            <div class="col-sm-8" style="font-style:italic;">
+		"To ensure India’s competitiveness in the global market, there is an undeniable need to upskill the Indian workforce. Presently only 5% of the existing workforce is trained and more than 80% are without any training. Skill development is the defining element of a country’s growth. For this we need to redefine the relationship of conventional education framework, employment and the desired skills. A vision of sustainable economic progress may be illusory unless the skill gap has been addressed. The research and skill development centre is one of its kinds aiming to provide the educated and unemployed youth with necessary skills in demand and thus addressing the skill gap in terms of quality and quantity currently prevailing in the industry. Thus, enhancing the employability of the underprivileged individuals to bridge the socioeconomic drive."
+		</div>
+            <div class="col-sm-1"></div>
+             <div class="col-sm-2"><img src="{% static "user/images/q.jpg" %}"  class="img-circle" width="230px" height="230px"/></div>
+                        <div class="col-sm-1"></div>            
+                </div>
+		
+
+		</body>
+	
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+#Cnt{
+font-size:17px;
+background-color:#ECECEA;
+min-height:300px;
+}
+#cont{
+background-image:url("{% static "user/images/RSDC.jpg" %}");
+background-position:center;
+height:400px;
+background-repeat:no-repeat;
+}
+
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+background-color:#253939;
+}
+
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+font-size:20px;
+background-color:#b0c8de;
+}
+</style>
+{% endblock %}

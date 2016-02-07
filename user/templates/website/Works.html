@@ -1,0 +1,51 @@
+<html>
+	<body>
+		<div id="Header">
+		<a align="right" href="{% url "Member" %}">Back to Workspace</a>
+		<h1>My Works</h1>
+		<a href="{% url "Logout" %}">Logout</a>
+		<br>
+		</div>
+		<h1>Projects</h1>
+		<div id="List">
+		<ul>		
+		{% for project in projects %}
+		<li><a href="{% url "WorkDetailProject" title=project.pk %}"><h2>{{project.topic}}</h2></a></li>
+		{% endfor %}
+		</ul>
+		</div>
+		<h1>Researches</h1>
+		<div id="List">
+		<ul>		
+		{% for research in researches %}
+		<li><a href="{% url "WorkDetailResearch" title=research.pk %}"><h2>{{research.topic}}</h2></a></li>
+		{% endfor %}
+		</ul>
+		</div>
+	</body>
+<style type="text/css">
+	#List ul li a{
+	text-decoration:none;
+	color:black;	
+	}
+	#List ul li a:hover{
+	text-decoration:underline;
+	}
+	#Header{
+	font-family:Palatino, serif;
+	color:white;
+	min-width:1330px;
+	background-color:#558C89;
+	}
+	#Header a{
+	margin:0px 0px 0px 1200px;
+	color:white;
+	text-decoration:none;
+	}
+	#Header a:hover{
+	text-decoration:underline;
+	}
+	#Header h1{
+	text-align:center;
+	}
+</html>	

@@ -1,0 +1,141 @@
+<html>
+{% load staticfiles %}
+         <head>
+        <link rel="stylesheet" href="{% static 'bootstrap-3.3.5-dist/css/bootstrap.min.css' %}">
+		<script src="{% static 'bootstrap-3.3.5-dist/js/jquery.min.js' %}"></script>
+		<script src="{% static 'bootstrap-3.3.5-dist/js/bootstrap.min.js' %}"></script>
+        </head>
+	<body>
+		<div  id="Header">
+		<a  href="{% url "Home" %}">Back to home</a>
+		<h1>My Workspace</h1>
+		<a href="{%	url	"Logout" %}">Logout</a>
+		<marquee direction="left">{{student.tag_line}}</marquee>
+		</div>
+		<br>
+		<br>
+        <form role="form">
+        <div class="col-sm-1"></div>
+		<div class="col-sm-4">
+            <div class="form-group">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" value="{{student.name}}" disabled/>
+                  </div>
+            <div class="form-group">
+                    <label for="age">Age:</label>
+                    <input type="text" class="form-control" id="age" name="age" value="{{student.age}}" disabled/>
+                  </div>
+              <div class="form-group">
+                        <label for="addr">Address:</label>
+                       <textarea class="form-control" rows="5" id="addr" name="address" disabled/>{{student.address}}</textarea>
+                      </div>
+            
+            <div class="form-group">
+                    <label for="institute">Institute:</label>
+                    <input type="text" class="form-control" id="institute" name="institute"  value="{{student.institute}}" disabled/>
+                  </div>
+            <div class="form-group">
+                    <label for="quaul">Qualification:</label>
+                    <input type="text" class="form-control" id="qual" name="qualification" value="{{student.qualification}}" disabled/>
+                  </div>
+            <div class="form-group">
+                        <label for="works">Works:</label>
+                       <textarea class="form-control" rows="5" id="works" name="works" disabled/>{{student.works}}</textarea>
+                      </div>
+            <div class="form-group">
+                    <label for="achieve">Latest Achievement:</label>
+                   <input type="text" class="form-control" id="achieve" name="achievement1" value="{{student.achievement1}}" disabled/><br>
+                    <input type="text" class="form-control" name="achievement2" value="{{student.achievement2}}" disabled/><br>
+		            <input type="text" class="form-control" name="achievement3" value="{{student.achievement3}}" disabled/>
+                  </div>
+            <div class="form-group">
+                    <label for="tag">Tag Line:</label>
+                    <input type="text" class="form-control" id="tag" name="tag_line" value="{{student.tag_line}}" disabled/>
+                  </div>
+<!--		                <pre>Name           :<input class="form-control" type="text" style="border:none; border-radius:10%; height:40px;" >
+Age            :<input  type="text" style="border:none; height:40px;border-radius:10%;" value="{{student.age}}" disabled/>
+Institute      :<input type="text" style="border:none; height:40px;width:400px;border-radius:10%;"
+Address        :<textarea wrap="physical" style="border:none;border-radius:10%;" cols="40" rows="5" disabled/>{{student.address}}</textarea>
+Qualification  :<input type="text" style="border:none; height:40px;width:400px;border-radius:10%;" 
+Works          :<textarea wrap="physical" style="border:none; border-radius:10%;" cols="40" rows="5" disabled/></textarea>
+<pre>Achievements   :<input type="text" style="border:none; height:40px;width:400px; border-radius:10%;" 
+		<input type="text" style="border:none; height:40px;width:400px;border-radius:10%;" value="{{student.achievement2}}" disabled/>
+		<input type="text" style="border:none; height:40px;width:400px;border-radius:10%;" value="{{student.achievement3}}" disabled/></pre>
+Tag Line       :<input type="text" style="border:none; height:40px; width:400px;border-radius:10%;"
+		</pre>-->
+		</div>
+         </form>
+            <div class="col-sm-4"></div>
+		<div class="col-sm-3" id="Menu_Select">
+		<a href="{% url "AddProject" %}"><h3>Add New</h3></a><hr>
+		<a href="{% url "EditProfile" %}"><h3>Edit Profile</h3></a><hr>
+		<a href="{% url "Works" %}"><h3>Works</h3></a><hr>
+		<h2>Requests</h2>
+		<ul>
+		{% for row in mylist %}
+		<li>{{row.project.topic}} - {{row.student.name}}&nbsp;&nbsp;<a href="{% url "Accept" pk=row.pk %}" ><input type="button" value="Accept"/></a>&nbsp;&nbsp;<a href="{% url "Delete" pk=row.pk %}" ><input type="button" value="Delete"/></a></li><br>
+		{% endfor %}
+		</ul>
+		<br>
+		
+			</div>
+			</body>
+	<style type="text/css">
+	#ac{
+	width:200px;
+	}	
+	P_Show input{
+	height:30px;
+	width:300px;
+	}
+	textarea{
+    vertical-align:top;
+    }
+	#Header{
+	font-family:Palatino, serif;
+	color:white;
+	min-width:1330px;
+	background-color:#558C89;
+	}
+	#Header a{
+	margin:0px 0px 0px 1240px;
+	color:white;
+	text-decoration:none;
+	}
+	#Header a:hover{
+	text-decoration:underline;
+	}
+	#Header h1{
+	text-align:center;
+	}
+	#P_Show{
+	font-size:20px;
+	position:absolute;
+	float:left;
+	line-height:50px;
+	margin-left:100px;
+	}
+	#Menu_Select{
+	text-align:center;
+	#margin-top:100px;
+	background-color:#7db2af;
+	min-width:300px;
+	min-height:300px;
+	height:500px;
+	overflow-y:auto;
+	}
+	#Menu_Select li{
+	text-align:center;
+	}
+	
+	#Menu_Select a{
+	color:White;
+	text-decoration:none;
+	}
+	#Menu_Select a:hover{
+	text-decoration:underline;
+	}
+	</style>	
+</html>	
+	
+	

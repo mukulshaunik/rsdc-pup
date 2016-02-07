@@ -1,0 +1,90 @@
+<html>
+	<body>
+	         <div id="T">
+			 <a align="right" href="#">Back to home</a>
+			 <br>
+		Details Form
+		<br>
+		<a href="{% url "Logout" %}">Logout</a>
+		<br>
+		
+		</div>
+		<div id="frm">
+		<form action="{% url "SaveProject" %}" method="post">{% csrf_token %}
+		<div id="RFC">
+		<pre>
+		<p style="font-size:15px; solid black;"><b>		
+Start date              : <input type="text" name="start_date" placeholder="dd/mm/yyyy"/>
+
+Topic Of Research       : <input type="text" name="topic" placeholder="IN CAPS"/><br>
+
+Details                 : <textarea wrap="physical" name="details"  cols="60" rows="20" placeholder="A very detailed Description about your project......"></textarea><br>	
+
+No. of Interns Required : <input type="text" name="no_of_interns_required" /><br>
+
+Role - Qualification    : <textarea wrap="physical" name="role_qualification" cols="60" rows="10" placeholder="Example : Designer - Html/css+JavaScript" ></textarea><br></b>
+<p>             <input type="Button" style="width: 200px; height: 50px;" value="Submit"/></p></pre>
+		<br>
+		<br></div>
+		</form>
+		</div>
+	</body>
+<style>
+#frm{
+width:500px;
+height:1100px;
+margin-right:auto;
+margin-left:auto;
+opacity:0.6;
+}
+
+.H{
+display:inline;
+border-left:2px solid;
+border-left-color:white;
+padding-left:1em;
+padding-right:1em;
+}
+.HF{
+display:inline;
+border-left:none;
+padding-left:0;
+padding-right:1em;
+}
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#034054;
+}
+#T a{
+margin-left:1200px;
+text-decoration:none;
+color:white;
+font-size:15px;
+}
+#T a:hover{
+text-decoration:underline;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+textarea{
+vertical-align:top;
+}
+input{
+line-height:30px;
+}
+p
+{
+width:500px;
+}	
+</style>
+</html>

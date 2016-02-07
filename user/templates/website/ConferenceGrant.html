@@ -1,0 +1,141 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}&nbsp;&nbsp;Conference Grant&nbsp;::&nbsp;{{grant.title}}{% endblock title %}
+		{% block content %}
+		<div class ="sidebar">
+<h4>Conference Grants</h4>
+	<ul class="list-group">
+	{% for grant1 in grants %}
+	<li class="list-group-item"><a href="{%	url	"ConferenceGrant"  title=grant1.title	%}" class="RG">{{grant1.title}}</a></li>
+	{% endfor %}
+	</ul>
+</div>
+		<p id="First">{{grant.text|linebreaks}}</p>
+	<div id="Content">
+	<h2>Eligibility:</h2>
+	<p>{{grant.eligibility|linebreaks}}</p>
+	<h2>How to Apply:</h2>
+	<p>{{grant.how_to_apply|linebreaks}}</p>
+	<br>
+	<h4>For more info logon to :<a href="{{grant.link}}" ><input type="button" value="Click"/></a><h4>
+	</div>
+	
+<style type="text/css">
+#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+min-width:1330px;
+background-color:#034054;
+}
+
+#w li{
+display:inline;
+}
+#w li a{
+color:black;
+text-decoration:none;
+}
+#w li a:hover{
+font-size:17px;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+font-size:20px;
+background-color:#b0c8de;
+}
+#content{
+float:left;
+width:80%px;
+}
+#w{
+width:300px;
+}
+h2{
+font-size:30px;
+text-decoration:underline;
+}
+h3{
+font-size:25px;
+}
+h1
+{
+color:#575758;
+font-size:35px;
+min-width:1340px;
+}
+#Box{
+font-family: Arial, Verdana, sans-serif;
+margin:0px 0px 0px 700px;
+font-size:20px;
+text-decoration:none;
+padding:3px;
+border-top:solid;
+border-bottom:solid;
+border-top-color:black;
+border-bottom-color:black;
+width:400px;
+}	
+#First{
+font-size:20px;
+width:1200px;
+}
+.s{
+color:black;
+}
+.s a{
+color:#575758;
+font-size:18px;
+padding:5px;
+text-decoration:none;
+}	
+.s a:hover{
+text-decoration:underline;
+}
+h4{
+font-size:25px;
+text-decoration:underline;
+color:black;
+text-align:center;
+}
+ol{
+font-size:20px;
+width:900px;
+min-width:600px;
+}	
+.sidebar{
+position:absolute;
+float: right;
+margin:0px 0px 0px 1000px;
+line-height:30px;
+overflow-y:auto;
+min-width:250px;
+height:400px;
+}
+.sidebar ul li a {color :black;}
+p
+{
+font-size:20px;
+width:900px;
+min-width:600px;
+}
+</style>
+</body>
+{% endblock %}

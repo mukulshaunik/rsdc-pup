@@ -1,0 +1,53 @@
+<html>
+	<body>
+		<div id="Header">
+		<a align="right" href="{% url "Member" %}">Back to Workspace</a>
+		<h1>Details</h1>
+		<a href="{% url "Logout" %}">Logout</a>
+		<br>
+		</div>
+		<div id="Detail">
+		<form action="{% url "EditProject" %}" method="post">{% csrf_token %}
+		<input type="hidden" name="pk" value="{{work.id}}">
+<pre>Name        : <input type="text" name="topic" value="{{work.topic}}" />
+Start Date  : <input type="text" name="start_date" value="{{work.start_date}}"/>
+Description : <textarea wrap="physical" name="details" value="{{work.detail}}" cols="40" rows="5" />{{work.details}}</textarea> 
+Members     : <textarea wrap="physical"  cols="40" value="" rows="5" />{{s}}</textarea> 
+End Date    : <input type="text" name="end_date" value="{{work.end_date}}" />  
+		<input type="Submit" style="  width: 100px; height: 50px; border-radius:20%" value="Save "/>
+		</pre>
+		</form>	
+</div>		
+		
+	</body>
+<style type="text/css">
+    #Detail input{
+	height:30px;
+	width:300px;
+	}
+	textarea{
+    vertical-align:top;
+    }
+    #Detail{
+	font-size:20px;
+	line-height:100px;
+	}
+	#Header{
+	font-family:Palatino, serif;
+	color:white;
+	min-width:1330px;
+	background-color:#034054;
+	}
+	#Header a{
+	margin:0px 0px 0px 1240px;
+	color:white;
+	text-decoration:none;
+	}
+	#Header a:hover{
+	text-decoration:underline;
+	}
+	#Header h1{
+	text-align:center;
+	}	
+</style>
+</html>	

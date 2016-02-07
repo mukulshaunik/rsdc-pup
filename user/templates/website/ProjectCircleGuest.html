@@ -1,0 +1,76 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Project Circle{% endblock title %}
+		{% block content %}
+		<div id="data">
+		<h1 class="col-sm-2">Welcome,Guest</h1><div class="col-sm-7"></div><a class="col-sm-3" href="{% url "ProjectCircle" %}"><input type="Button"  style="font-size:20px; color:black; width:210px; cursor:hand; height:75px; " value="Project Circle" ></a><br>
+		<h2>What would I do?</h2>
+		<h3>As a member of the Project Circle, you would assist with a range of tasks including:</h3>
+		<ul>
+		<li>Identification of Project problem</li>
+		<li>Explaining specific project problems</li>
+		<li>Literature review</li>
+		<li>Specifying the purpose of project</li>		
+		<li>Specification of a Conceptual framework - Usually a set of hypotheses</li>
+		<li>Choice of a methodology (for data collection)</li>
+		<li>Data collection</li>
+		<li>Analyzing and interpreting the data</li>
+		<li>Developing Project</li>
+		<li>Communicating the Project findings and, possibly, recommendations</li>
+		</ul>		
+		<h2>How to start a new Project?</h2>
+		<p>To start a new Project , firstly you have to register yourself with us and then after login you'll see a add Project tab on this page from where you can add a new Project by giving some details about the Project you want to start or you have already started.</p>
+		<h2>How to be a part of someone's Project?</h2>
+		<p>To be a part of someone's Project, firstly you have to register yourself with us and then after login you can click on the Intern circle tab and select someone's Project and apply for it by giving some details like why do you want to join?, Any Project experience? Etc. If the Leader head accepted your request then you can be the part of that Project. </p>
+		</div>
+	</body>
+	<style type="text/css">
+	#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+#data li{
+font-size:18px;
+}	
+#data{
+background-image:url({% static "user/images/Project_G.jpg" %});
+background-repeat:no-repeat;
+background-position:center;
+}
+#data p{
+font-size:20px;
+}	
+#data h1{
+color:#2e7e99;
+}	
+
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+height:200px;
+min-width:1330px;
+background-position:center;
+background-repeat:no-repeat;
+background-image:url("{% static "user/images/PCP3.jpg" %}");
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+#M{
+font-size:20px;
+background-color:#b9e2ee;
+margin-top:50px;
+}
+</style>
+{% endblock %}

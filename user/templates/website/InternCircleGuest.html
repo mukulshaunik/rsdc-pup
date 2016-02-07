@@ -1,0 +1,69 @@
+{%	extends	"website/base.html"	%}
+{% load staticfiles %}
+{% block title %}Intern Circle{% endblock title %}
+		{% block content %}
+		<div id="data">
+		<h1 class="col-sm-2">Welcome,Guest</h1><div class="col-sm-7"></div><a class="col-sm-3" href="{% url "InternCircle" %}"><input type="Button"  style="font-size:20px; color:black; width:210px; cursor:hand; height:75px; " value="Intern Circle" ></a><br>
+		<h2>What would I do?</h2>
+		<h3>As a member of the Interns' Circle, you would assist with a range of tasks including:</h3>
+		<ul>
+		<li>Attending and staffing conferences and events</li>
+		<li>Research</li>
+		<li>Communication and promotion</li>
+		<li>Sitting on committees</li>
+		<li>Other initiatives</li>
+		</ul>		
+		<p>There are many benefits of volunteering with the Centre.  Some of the benefits our Interns enjoy include: increased industry exposure; access to special events; networking opportunities; and consideration for job and research positions. Joining the Interns' Circle is also a great way to enhance your resume and broaden your legal knowledge.</p>
+		<h2>How do I sign-up?</h2>
+		<p>If you are interested in joining the Intern's Circle or in learning more about the Centre's work, please register yourself on this site.</p>
+		</div>
+	</body>
+	<style type="text/css">
+	#logout{
+margin:0px 0px 0px 1240px;
+color:white;
+text-decoration:none;
+font-size:20px;}
+#logout:hover{
+text-decoration:underline;
+}
+#data li{
+font-size:18px;
+}	
+#data{
+background-image:url("{% static "/images/intern_back.jpg" %}");
+background-repeat:no-repeat;
+background-position:center;
+}
+#data p{
+font-size:20px;
+}	
+#data h1{
+color:#2e7e99;
+}	
+#T{
+text-align:center;
+font-family:Palatino, serif;
+font-size:40px;
+color:white;
+height:200px;
+min-width:1330px;
+background-position:center;
+background-repeat:no-repeat;
+background-image:url("{% static "user/images/ICP.jpg" %}");
+}
+#M{
+background-color:#b9e2ee;
+font-size:20px;
+margin-top:50px;
+}
+.Menu
+{
+color:white;
+text-decoration:none;
+}
+.Menu:hover{
+color:#0d7192;
+}
+</style>
+{% endblock %}
